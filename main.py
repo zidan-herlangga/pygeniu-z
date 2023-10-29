@@ -11,7 +11,7 @@ exit_ = colored("Good Bye..", "red", attrs=["blink"])
 print("""
 ░█▀█░█░█░█▀▀░█▀▀░█▀█░▀█▀░█░█░░░░░▀▀█
 ░█▀▀░░█░░█░█░█▀▀░█░█░░█░░█░█░▄▄▄░▄▀░
-░▀░░░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░░░░▀▀▀ 
+░▀░░░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░░░░▀▀▀
 """)
 
 # Animasi delay, seakan - akan loading
@@ -39,39 +39,59 @@ while select_menu != 0:
     print(descrip)
     print(link)
     print()
-    menu = input(
-        "A. Arimatika\nB. Segitiga (*)\nC. Penghitung luas\nD. Generate QR\nE. ???\n\n0. Keluar\nPilih Menu: ")
 
+    menu = input(
+        "A. Arimatika\nB. Segitiga (*)\nC. Penghitung luas\nD. Generate QR\nE. ???\n\n0. Keluar/(CTRL + C)\nPilih Menu: ")
+    os.system("clear")
+    os.system("cls")
+
+    if menu not in ["A", "B", "C", "D", "E",
+                    "a", "b", "c", "d", "e", 0]:
+        print(colored("\nPilihan tidak valid\n",
+                      "yellow", attrs=["blink"]))
+        continue
+
+    # OPSI A
     if menu == "A" or menu == "a":
         def Penjumlahan():
+            os.system("clear")
+            os.system("cls")
             print("Penjumlahan")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
-            results = num1 + num2
+            results = colored(num1 + num2, "green", attrs=["blink"])
             print(f"\nHasil dari {num1} + {num2} =", results)
 
         def Pengurangan():
+            os.system("clear")
+            os.system("cls")
             print("Pengurangan")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
-            results = num1 - num2
+            results = colored(num1 - num2, "green", attrs=["blink"])
             print(f"\nHasil dari {num1} - {num2} =", results)
 
         def Perkalian():
+            os.system("clear")
+            os.system("cls")
             print("Perkalian")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
-            results = num1 * num2
+            results = colored(num1 * num2, "green", attrs=["blink"])
             print(f"\nHasil dari {num1} * {num2} =", results)
 
         def Pembagian():
+            os.system("clear")
+            os.system("cls")
             print("Pembagian")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
-            results = num1 / num2
+            results = colored(num1 / num2, "green", attrs=["blink"])
             print(f"\nHasil dari {num1} / {num2} =", results)
 
         def Modulus():
+            os.system("clear")
+            os.system("cls")
             print("Modulus")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
@@ -79,17 +99,21 @@ while select_menu != 0:
             print(f"\nHasil dari {num1} % {num2} =", results)
 
         def Pangkatan():
+            os.system("clear")
+            os.system("cls")
             print("Pangkatan")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
-            results = num1 ** num2
+            results = colored(num1 ** num2, "green", attrs=["blink"])
             print(f"\nHasil dari {num1} ** {num2} =", results)
 
         def Pembagian_Bulatan():
+            os.system("clear")
+            os.system("cls")
             print("Pembagian Bulatan")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
-            hasil = num1 // num2
+            hasil = colored(num1 // num2, "green", attrs=["blink"])
             print(f"\nHasil dari {num1} // {num2} =", hasil)
 
         while True:
@@ -98,6 +122,9 @@ while select_menu != 0:
                 "1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian\n5. Modulus \n6. Pangkat\n7. Pembagian Bulatan\n\n0. Keluar\n99. Kembali\n\nPilih: "))
             os.system("clear")
             os.system("cls")
+            if choice not in [0, 1, 2, 3, 4, 5, 6, 7, 99]:
+                print("Pilihan tidal valid")
+                continue
             if choice == 1:
                 Penjumlahan()
             elif choice == 2:
@@ -119,13 +146,15 @@ while select_menu != 0:
         os.system("clear")
         os.system("cls")
 
+    # OPSI B
     elif menu == "B" or menu == "b":
         def sikuSiku():
             print("Siku-Siku")
             value = int(input("Masukan nilai: "))
             for i in range(0, value):
                 for j in range(i + 1):
-                    print("*", end="")
+                    star = colored("*", "green", attrs=["blink"])
+                    print(star, end="")
                 print()
 
         def sikuSikuTerbalik():
@@ -133,20 +162,25 @@ while select_menu != 0:
             value = int(input("Masukan nilai: "))
             for i in reversed(range(0, value)):
                 for j in range(i + 1):
-                    print("*", end="")
+                    star = colored("*", "green", attrs=["blink"])
+                    print(star, end="")
                 print()
 
         def segitigaSamaKaki():
             print("Sama Kaki")
             value = int(input("Masukan nilai: "))
             for i in range(0, value):
-                print(('*' * (1 + 2 * i)).center(1+2*10))
+                star = colored(("*" * (1 + 2 * i)).center(1+2*10),
+                               "green", attrs=["blink"])
+                print(star)
 
         def segitigaSamaKakiTerbalik():
             print("Sama Kaki (Reversed)")
             value = int(input("Masukan nilai: "))
             for i in reversed(range(0, value)):
-                print(('*' * (1 + 2 * i)).center(1+2*10))
+                star = colored(("*" * (1 + 2 * i)).center(1+2*10),
+                               "green", attrs=["blink"])
+                print(star)
         while True:
             print("\n*Segitiga")
             choice = int(input(
@@ -154,6 +188,9 @@ while select_menu != 0:
             print()
             os.system("clear")
             os.system("cls")
+            if choice not in [0, 1, 2, 3, 4, 99]:
+                print("Pilihan tidal valid")
+                continue
             if choice == 1:
                 sikuSiku()
             elif choice == 2:
@@ -169,35 +206,42 @@ while select_menu != 0:
         os.system("clear")
         os.system("cls")
 
+    # OPSI C
     elif menu == "C" or menu == "c":
         def luasSegitiga():
+            os.system("clear")
+            os.system("cls")
             print("Luas segitiga")
             base = float(input("Masukan alas: "))
             tall = float(input("Masukan tinggi: "))
-            results = 0.5 * base * tall
+            results = colored(0.5 * base * tall, "green", attrs=["blink"])
             print(f"Alas {base} dan tinggi {tall} Hasil = {results}")
 
         def luasLingkaran():
+            os.system("clear")
+            os.system("cls")
             print("Luas lingkaran")
             phi = 3.14
             r = float(input("Masukan panjang jari-jari lingkaran: "))
-
-            broad = phi * r * r
+            broad = colored(phi * r * r, "green", attrs=["blink"])
             print(f"Luas lingkaran adalah = {broad}")
 
         def luasKelilingPersegi():
+            os.system("clear")
+            os.system("cls")
             print("Luas keliling persegi")
             s = float(input("Masukan panjang sisi: "))
             broad = s**2
-            around = 4 * s
+            around = colored(4 * s, "green", attrs=["blink"])
             print(f"Luas {broad} keliling {around} ")
         while True:
             print("\n*Penghitung luas")
             pilihan = int(input(
                 "1. Luas segitiga\n2. Luas lingkaran\n3. Luas keliling persegi\n\n0. Keluar\n99. Kembali\n\nMasukan pilihan: "))
             print()
-            os.system("clear")
-            os.system("cls")
+            if choice not in [0, 1, 2, 3, 99]:
+                print("Pilihan tidal valid")
+                continue
             if pilihan == 1:
                 luasSegitiga()
             elif pilihan == 2:
@@ -211,6 +255,7 @@ while select_menu != 0:
         os.system("clear")
         os.system("cls")
 
+    # OPSI D
     elif menu == "D" or menu == "d":
         def create_folder(folder_name):
             if not os.path.exists(folder_name):
@@ -231,8 +276,6 @@ while select_menu != 0:
             qrcode.save(file_path, scale=5)
             print(f"QR Code telah disimpan di '{file_path}'")
         while True:
-            os.system("clear")
-            os.system("cls")
             QR()
             break
         # Untuk membersihkan layar, Anda dapat menggunakan perintah berikut
@@ -240,10 +283,10 @@ while select_menu != 0:
         os.system("cls")    # Untuk sistem Windows
         continue
 
+    # OPSI E (Coming Soon)
     elif menu == "E" or menu == "e":
         print(info)
-        continue
 
     else:
         print(exit_)
-        exit()
+        break

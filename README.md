@@ -1,9 +1,6 @@
-
-
-  
-░█▀█░█░█░█▀▀░█▀▀░█▀█░▀█▀░█░█░░░░░▀▀█
-░█▀▀░░█░░█░█░█▀▀░█░█░░█░░█░█░▄▄▄░▄▀░
-░▀░░░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░░░░▀▀▀ 
+<div align="center">
+<img src="banner.png" alt="banner-PyGENIU-Z" />
+</div>
 
 <br>
 <br>
@@ -52,3 +49,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+# Contributor
+
+<div style="display: flex; gap: 10px;">
+    <img src="https://avatars.githubusercontent.com/u/133259343?v=4" style="border-radius: 50%; width: 70px; height: 70px;">
+    <img src="" style="border-radius: 50%; width: 70px; height: 70px;">
+</div>
