@@ -53,6 +53,5 @@ SOFTWARE.
 # Contributor
 
 <div style="display: flex; gap: 10px;">
-    <img src="https://avatars.githubusercontent.com/u/133259343?v=4" style="border-radius: 50%; width: 70px; height: 70px;">
-    <img src="" style="border-radius: 50%; width: 70px; height: 70px;">
+    <img src="https://avatars.githubusercontent.com/u/133259343?v=4" height="50" style="border-radius: 50%;">
 </div>
