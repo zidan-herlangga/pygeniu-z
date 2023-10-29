@@ -1,5 +1,3 @@
 segno
 colorama
 termcolor
-os
-time

@@ -4,6 +4,7 @@ import segno    # Library genarate QRCode
 from termcolor import colored   # Library untuk hasil ada warnanya
 
 # Sebuah variable info dan exit
+inValid = colored("\nInvalid\n", "yellow", attrs=["blink"])
 info = colored("Dalam pengembangan", "red")
 exit_ = colored("Good Bye..", "red", attrs=["blink"])
 
@@ -27,36 +28,33 @@ os.system("clear")
 os.system("cls")
 
 # Sebuah variable penyambut user
-title = colored("SELAMAT DATANG PyGENIU-Z", "red")
+title = colored("SELAMAT DATANG DI PyGENIU-Z", "red")
 descrip = colored("\nSilakan kunjungi link untuk source code nya.", "red")
 link = colored("https://github.com/zidan-herlangga/pygeniu-z",
                "green", attrs=["blink"])    # mengambil dari library termcolor
 
 select_menu = "y"
 while select_menu != 0:
-    print("============= MENU =============")
-    print(title)
-    print(descrip)
-    print(link)
-    print()
+    print(f"""
+=============================================
+{title.center(50)}
+{descrip}
+{link}
+=============================================
+👇🏼Menu List👇🏼
+""")
 
     menu = input(
-        "A. Arimatika\nB. Segitiga (*)\nC. Penghitung luas\nD. Generate QR\nE. ???\n\n0. Keluar/(CTRL + C)\nPilih Menu: ")
+        "A. Arimatika\nB. Segitiga (*)\nC. Penghitung luas\nD. Generate QR\nE. ???\n\n0. Keluar or CTRL + C\nPilih Menu: ")
     os.system("clear")
     os.system("cls")
-
-    if menu not in ["A", "B", "C", "D", "E",
-                    "a", "b", "c", "d", "e", 0]:
-        print(colored("\nPilihan tidak valid\n",
-                      "yellow", attrs=["blink"]))
-        continue
 
     # OPSI A
     if menu == "A" or menu == "a":
         def Penjumlahan():
             os.system("clear")
             os.system("cls")
-            print("Penjumlahan")
+            print("Penjumlahan (+)")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
             results = colored(num1 + num2, "green", attrs=["blink"])
@@ -65,7 +63,7 @@ while select_menu != 0:
         def Pengurangan():
             os.system("clear")
             os.system("cls")
-            print("Pengurangan")
+            print("Pengurangan (-)")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
             results = colored(num1 - num2, "green", attrs=["blink"])
@@ -74,7 +72,7 @@ while select_menu != 0:
         def Perkalian():
             os.system("clear")
             os.system("cls")
-            print("Perkalian")
+            print("Perkalian (*)")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
             results = colored(num1 * num2, "green", attrs=["blink"])
@@ -83,7 +81,7 @@ while select_menu != 0:
         def Pembagian():
             os.system("clear")
             os.system("cls")
-            print("Pembagian")
+            print("Pembagian (/)")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
             results = colored(num1 / num2, "green", attrs=["blink"])
@@ -92,7 +90,7 @@ while select_menu != 0:
         def Modulus():
             os.system("clear")
             os.system("cls")
-            print("Modulus")
+            print("Modulus (%)")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
             results = num1 % num2
@@ -101,7 +99,7 @@ while select_menu != 0:
         def Pangkatan():
             os.system("clear")
             os.system("cls")
-            print("Pangkatan")
+            print("Pangkatan (**)")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
             results = colored(num1 ** num2, "green", attrs=["blink"])
@@ -110,7 +108,7 @@ while select_menu != 0:
         def Pembagian_Bulatan():
             os.system("clear")
             os.system("cls")
-            print("Pembagian Bulatan")
+            print("Pembagian Bulatan (//)")
             num1 = float(input("\nMasukan bilangan awal: "))
             num2 = float(input("Masukan bilangan akhir: "))
             hasil = colored(num1 // num2, "green", attrs=["blink"])
@@ -119,11 +117,11 @@ while select_menu != 0:
         while True:
             print("\n*ARITMATIKA")
             choice = int(input(
-                "1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian\n5. Modulus \n6. Pangkat\n7. Pembagian Bulatan\n\n0. Keluar\n99. Kembali\n\nPilih: "))
+                "1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian\n5. Modulus \n6. Pangkat\n7. Pembagian Bulatan\n\n99. Kembali\n\nPilih: "))
             os.system("clear")
             os.system("cls")
-            if choice not in [0, 1, 2, 3, 4, 5, 6, 7, 99]:
-                print("Pilihan tidal valid")
+            if choice not in [1, 2, 3, 4, 5, 6, 7, 99]:
+                print(inValid)
                 continue
             if choice == 1:
                 Penjumlahan()
@@ -184,12 +182,12 @@ while select_menu != 0:
         while True:
             print("\n*Segitiga")
             choice = int(input(
-                "1. Siku-Siku\n2. Siku-Siku (Reversed)\n3. Segitiga Sama Kaki\n4. Segitiga Sama Kaki (Reversed)\n\n0. Keluar\n99. Kembali\n\nPilih: "))
+                "1. Siku-Siku\n2. Siku-Siku (Reversed)\n3. Segitiga Sama Kaki\n4. Segitiga Sama Kaki (Reversed)\n\n99. Kembali\n\nPilih: "))
             print()
             os.system("clear")
             os.system("cls")
-            if choice not in [0, 1, 2, 3, 4, 99]:
-                print("Pilihan tidal valid")
+            if choice not in [1, 2, 3, 4, 99]:
+                print(inValid)
                 continue
             if choice == 1:
                 sikuSiku()
@@ -237,10 +235,10 @@ while select_menu != 0:
         while True:
             print("\n*Penghitung luas")
             pilihan = int(input(
-                "1. Luas segitiga\n2. Luas lingkaran\n3. Luas keliling persegi\n\n0. Keluar\n99. Kembali\n\nMasukan pilihan: "))
+                "1. Luas segitiga\n2. Luas lingkaran\n3. Luas keliling persegi\n\n99. Kembali\n\nMasukan pilihan: "))
             print()
-            if choice not in [0, 1, 2, 3, 99]:
-                print("Pilihan tidal valid")
+            if choice not in [1, 2, 3, 99]:
+                print(inValid)
                 continue
             if pilihan == 1:
                 luasSegitiga()
