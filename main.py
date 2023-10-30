@@ -1,21 +1,21 @@
-import os   # Library dipakai untuk meng-clear terminal sistem operasi WINDOWS / LINUX
-import time  # Library untuk waktu delay
-import segno    # Library genarate QRCode
-from termcolor import colored   # Library untuk hasil ada warnanya
+import os
+import time
+import segno
+from termcolor import colored
 
-# Sebuah variable info dan exit
+
 inValid = colored("\nInvalid\n", "yellow", attrs=["blink"])
 info = colored("Dalam pengembangan", "red")
 exit_ = colored("Good Bye..", "red", attrs=["blink"])
 
-# Banner
+
 print("""
 ░█▀█░█░█░█▀▀░█▀▀░█▀█░▀█▀░█░█░░░░░▀▀█
 ░█▀▀░░█░░█░█░█▀▀░█░█░░█░░█░█░▄▄▄░▄▀░
 ░▀░░░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░░░░▀▀▀
 """)
 
-# Animasi delay, seakan - akan loading
+
 print("Menu akan tampil dalam 3 detik")
 time.sleep(1)
 print("Menu akan tampil dalam 2 detik")
@@ -23,19 +23,20 @@ time.sleep(1)
 print("Menu akan tampil dalam 1 detik")
 time.sleep(1)
 
-# Setelah animasi, maka perintah ini akan meng-clear animasi tersebut
+
 os.system("clear")
 os.system("cls")
 
-# Sebuah variable penyambut user
+
 title = colored("SELAMAT DATANG DI PyGENIU-Z", "red")
 descrip = colored("\nSilakan kunjungi link untuk source code nya.", "red")
 link = colored("https://github.com/zidan-herlangga/pygeniu-z",
-               "green", attrs=["blink"])    # mengambil dari library termcolor
+               "green", attrs=["blink"])
 
 select_menu = "y"
 while select_menu != 0:
     print(f"""
+Waktu saat ini: {time.strftime("%Y-%m-%d %H:%M:%S")}
 =============================================
 {title.center(50)}
 {descrip}
@@ -45,11 +46,11 @@ while select_menu != 0:
 """)
 
     menu = input(
-        "A. Arimatika\nB. Segitiga (*)\nC. Penghitung luas\nD. Generate QR\nE. ???\n\n0. Keluar or CTRL + C\nPilih Menu: ")
+        "A. Arimatika\nB. Segitiga (*)\nC. Penghitung luas\nD. Generate QR\nE. Konversi KB\n\n0. Keluar\n\n[-] Pilih Menu: ")
     os.system("clear")
     os.system("cls")
 
-    # OPSI A
+    # OPSI A (Aritmatika)
     if menu == "A" or menu == "a":
         def Penjumlahan():
             os.system("clear")
@@ -144,7 +145,7 @@ while select_menu != 0:
         os.system("clear")
         os.system("cls")
 
-    # OPSI B
+    # OPSI B (Segitiga (*))
     elif menu == "B" or menu == "b":
         def sikuSiku():
             print("Siku-Siku")
@@ -204,7 +205,7 @@ while select_menu != 0:
         os.system("clear")
         os.system("cls")
 
-    # OPSI C
+    # OPSI C (Penghitung Luas)
     elif menu == "C" or menu == "c":
         def luasSegitiga():
             os.system("clear")
@@ -253,7 +254,7 @@ while select_menu != 0:
         os.system("clear")
         os.system("cls")
 
-    # OPSI D
+    # OPSI D (Generate QR)
     elif menu == "D" or menu == "d":
         def create_folder(folder_name):
             if not os.path.exists(folder_name):
@@ -281,9 +282,33 @@ while select_menu != 0:
         os.system("cls")    # Untuk sistem Windows
         continue
 
-    # OPSI E (Coming Soon)
+    # OPSI E (Konversi KB)
     elif menu == "E" or menu == "e":
-        print(info)
+        def konversi_KB():
+            print("\n*Konversi KB")
+            size_KB = float(input("Masukan size KB: "))
+
+            kb_to_mb = 1 / 1024
+            mb_to_gb = 1 / 1024
+            gb_to_tb = 1 / 1024
+
+            size_mb = size_KB * kb_to_mb
+            size_gb = size_mb * mb_to_gb
+            size_tb = size_gb * gb_to_tb
+
+            print()
+            print(colored(f"{size_KB} KB = {size_mb:.6f} MB",
+                  "green", attrs=["blink"]))
+            print(colored(f"{size_KB} MB = {size_gb:.6f} GB",
+                  "green", attrs=["blink"]))
+            print(colored(f"{size_KB} GB = {size_tb:.6f} TB",
+                  "green", attrs=["blink"]))
+
+        out_in = "y"
+        while out_in != "n":
+            konversi_KB()
+            out_in = input("\nMengulang kembali (Y/n)? ")
+            continue
 
     else:
         print(exit_)
