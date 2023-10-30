@@ -23,7 +23,7 @@ git clone https://github.com/zidan-herlangga/pygeniu-z.git
 - Step 2 - Install requipments
 
 ```
-pip install -r install.txt
+pip install -r modul.txt
 ```
 
 # MIT License
